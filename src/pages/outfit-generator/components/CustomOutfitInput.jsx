@@ -76,7 +76,7 @@ const CustomOutfitInput = ({
             type="url"
             value={customPrompt}
             onChange={(e) => onCustomPromptChange(e?.target?.value)}
-            placeholder="https://example.com/outfit-image.jpg"
+            placeholder="https://your-image-url.com/outfit.jpg"
             className="w-full p-3 border border-border-light rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent"
           />
         )}
