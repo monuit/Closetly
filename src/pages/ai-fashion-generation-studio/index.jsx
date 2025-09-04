@@ -224,11 +224,13 @@ const AIFashionGenerationStudio = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-surface/50 to-primary/5 dark:from-background dark:via-surface/30 dark:to-primary/10 relative overflow-x-hidden">
-      {/* Background decoration */}
+      {/* Enhanced Background decoration with animations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-fashion-light rounded-full blur-3xl opacity-30" />
-        <div className="absolute -bottom-32 -left-40 w-96 h-96 bg-gradient-to-r from-primary/10 to-fashion-purple/10 rounded-full blur-3xl opacity-20" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-fashion-blue/5 to-fashion-pink/5 rounded-full blur-3xl opacity-20" />
+        <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-fashion-light rounded-full blur-3xl opacity-30 float" />
+        <div className="absolute -bottom-32 -left-40 w-96 h-96 gradient-flow rounded-full blur-3xl opacity-20 float-delayed morph" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-fashion-blue/5 to-fashion-pink/5 rounded-full blur-3xl opacity-20 pulse-glow" />
+        <div className="absolute top-20 left-20 w-32 h-32 bg-fashion-purple/10 rounded-full blur-2xl opacity-40 float" />
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-fashion-pink/10 rounded-full blur-2xl opacity-30 float-delayed" />
       </div>
       {/* Enhanced Header with Theme Toggle */}
       <div className="relative z-10">
@@ -238,8 +240,9 @@ const AIFashionGenerationStudio = () => {
             description="Create stunning fashion looks with AI-powered style generation"
             icon={Magic2}
             className="border-none bg-transparent shadow-none"
+            gradient={true}
+            glowEffect={true}
             actions={<></>}
-            customIcon={null}
           />
           <div className="flex items-center space-x-3">
             <ThemeToggleDropdown />
@@ -288,13 +291,13 @@ const AIFashionGenerationStudio = () => {
             </div>
             
             <div className="text-right space-y-2">
-              <Button 
-                onClick={() => setShowUpgradeModal(true)}
-                className="bg-gradient-fashion hover:shadow-glow btn-hover-lift px-6"
-              >
-                <Star className="w-4 h-4 mr-2" />
-                Upgrade Plan
-              </Button>
+                                <Button 
+                    onClick={() => setShowUpgradeModal(true)}
+                    className="bg-gradient-fashion hover:shadow-glow btn-hover-lift px-6 hover-glow gradient-shimmer"
+                  >
+                    <Star className="w-4 h-4 mr-2" />
+                    Upgrade Plan
+                  </Button>
               <p className="text-xs text-muted-foreground">Get more credits & features</p>
             </div>
           </div>
@@ -627,8 +630,9 @@ const AIFashionGenerationStudio = () => {
                     onClick={handleGenerate}
                     disabled={!mainImage || selectedStyles?.length === 0 || isGenerating || !hasCredits(1)}
                     className={cn(
-                      "relative overflow-hidden bg-gradient-fashion hover:shadow-glow btn-hover-lift px-6 py-3",
-                      "disabled:opacity-50 disabled:cursor-not-allowed"
+                      "relative overflow-hidden bg-gradient-fashion hover:shadow-glow btn-hover-lift px-6 py-3 hover-glow text-shimmer",
+                      "disabled:opacity-50 disabled:cursor-not-allowed",
+                      !isGenerating && "gradient-shimmer"
                     )}
                   >
                     {isGenerating ? (

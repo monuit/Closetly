@@ -5,27 +5,29 @@ import { cn } from "../../utils/cn";
 import Icon from '../AppIcon';
 
 const buttonVariants = cva(
-    "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+    "inline-flex items-center justify-center whitespace-nowrap text-sm font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 relative overflow-hidden group",
     {
         variants: {
             variant: {
-                default: "bg-primary text-primary-foreground hover:bg-primary/90",
-                destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-                outline: "border border-input hover:bg-accent hover:text-accent-foreground",
-                secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-                ghost: "hover:bg-accent hover:text-accent-foreground",
-                link: "text-primary underline-offset-4 hover:underline",
-                success: "bg-success text-success-foreground hover:bg-success/90",
-                warning: "bg-warning text-warning-foreground hover:bg-warning/90",
-                danger: "bg-error text-error-foreground hover:bg-error/90",
+                default: "bg-gradient-fashion text-white hover:shadow-fashion-glow hover:scale-[1.02] active:scale-[0.98] shadow-lg",
+                destructive: "bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
+                outline: "border-2 border-primary/20 bg-background/80 backdrop-blur-sm hover:border-primary/40 hover:bg-primary/5 hover:shadow-lg text-foreground",
+                secondary: "bg-gradient-to-r from-secondary to-secondary/90 text-secondary-foreground hover:from-secondary/90 hover:to-secondary/80 hover:shadow-md",
+                ghost: "hover:bg-primary/10 hover:text-primary text-muted-foreground hover:shadow-sm",
+                link: "text-primary underline-offset-4 hover:underline hover:text-primary/80",
+                success: "bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:from-green-600 hover:to-emerald-700 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
+                warning: "bg-gradient-to-r from-amber-500 to-orange-600 text-white hover:from-amber-600 hover:to-orange-700 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
+                danger: "bg-gradient-to-r from-red-500 to-pink-600 text-white hover:from-red-600 hover:to-pink-700 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
+                premium: "bg-gradient-premium text-white hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98] shadow-lg",
+                glass: "glass-card text-foreground hover:glass-strong hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]",
             },
             size: {
-                default: "h-10 px-4 py-2",
-                sm: "h-9 rounded-md px-3",
-                lg: "h-11 rounded-md px-8",
-                icon: "h-10 w-10",
-                xs: "h-8 rounded-md px-2 text-xs",
-                xl: "h-12 rounded-md px-10 text-base",
+                default: "h-11 px-6 py-2 rounded-xl",
+                sm: "h-9 px-4 rounded-lg text-sm",
+                lg: "h-13 px-8 rounded-xl text-base",
+                icon: "h-11 w-11 rounded-xl",
+                xs: "h-8 px-3 rounded-lg text-xs",
+                xl: "h-14 px-12 rounded-2xl text-lg font-bold",
             },
         },
         defaultVariants: {
